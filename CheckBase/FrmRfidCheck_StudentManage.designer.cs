@@ -1,6 +1,6 @@
-﻿namespace LogisTechBase.rfidCheck
+﻿namespace CheckBase
 {
-    partial class FrmRfidCheck_StudentManage
+    partial class FrmStudentManage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRfidCheck_StudentManage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentManage));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtEPC = new System.Windows.Forms.TextBox();
+            this.txtRegisterState = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtbj = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,7 +124,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(756, 29);
+            this.btnAdd.Location = new System.Drawing.Point(756, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(111, 34);
             this.btnAdd.TabIndex = 10;
@@ -133,17 +134,18 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(756, 83);
+            this.btnUpdate.Location = new System.Drawing.Point(756, 242);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(111, 34);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "修改(&U)";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(756, 134);
+            this.btnDelete.Location = new System.Drawing.Point(756, 84);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(111, 34);
             this.btnDelete.TabIndex = 10;
@@ -153,6 +155,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(6, 17);
@@ -179,17 +182,17 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(23, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(89, 12);
             this.label5.TabIndex = 13;
-            this.label5.Text = "考勤码：";
+            this.label5.Text = "指纹登记状态：";
             // 
-            // txtEPC
+            // txtRegisterState
             // 
-            this.txtEPC.Location = new System.Drawing.Point(25, 127);
-            this.txtEPC.Name = "txtEPC";
-            this.txtEPC.ReadOnly = true;
-            this.txtEPC.Size = new System.Drawing.Size(413, 21);
-            this.txtEPC.TabIndex = 14;
+            this.txtRegisterState.Location = new System.Drawing.Point(25, 127);
+            this.txtRegisterState.Name = "txtRegisterState";
+            this.txtRegisterState.ReadOnly = true;
+            this.txtRegisterState.Size = new System.Drawing.Size(413, 21);
+            this.txtRegisterState.TabIndex = 14;
             // 
             // groupBox1
             // 
@@ -197,7 +200,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtnj);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtEPC);
+            this.groupBox1.Controls.Add(this.txtRegisterState);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -264,11 +267,21 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             // 
-            // FrmRfidCheck_StudentManage
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(756, 144);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 34);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "指纹登记(&R)";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // FrmStudentManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 568);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -276,11 +289,11 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmRfidCheck_StudentManage";
+            this.Name = "FrmStudentManage";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学生管理";
@@ -309,7 +322,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEPC;
+        private System.Windows.Forms.TextBox txtRegisterState;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtbj;
         private System.Windows.Forms.Label label7;
@@ -317,5 +330,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button2;
     }
 }

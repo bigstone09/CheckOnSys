@@ -1,0 +1,22 @@
+﻿CREATE TABLE person_info_min(xh varchar(20) primary key
+                    ,xm varchar(30));
+                    
+select p.xh "学号", p.xm "姓名", case(f.print) when '' then '未登记' else '已登记' end "登记状态"
+, pe.nj "年级", pe.bj "班级", pe.tel "电话", pe.email "邮箱"
+ from person_info_min as p,person_finger_print as f,person_expand_info as pe where p.xh=f.xh and p.xh=pe.xh  order  by p.xh;
+
+create table person_finger_print(xh varchar(20) primary key,print varchar(4096));
+
+delete from person_info_min
+insert into person_finger_print values('111','222')
+insert into person_finger_print values('222','')
+insert into person_finger_print(xh) values('333')
+
+select xh, case(print) when '' then '未登记' else '已登记' end print from person_finger_print
+
+
+CREATE TABLE person_info_min(xh varchar(20) primary key
+                    ,xm varchar(30));
+delete from person_info_min where xh=
+delete from person_finger_print
+delete from person_expand_info
